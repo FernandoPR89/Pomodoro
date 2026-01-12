@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function exportCSV() {
-        chrome.storage.local.get(["stats"], (data) => {
+        chrome.storage.sync.get(["stats"], (data) => {
             const stats = data.stats || {};
             const rows = [["Fecha", "Ciclos"]];
 
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function clearStats() {
         if (!confirm("¿Seguro que quieres borrar todas las estadísticas?")) return;
-        chrome.storage.local.set({ stats: {} }, () => refresh(parseInt(yearSelect.value)));
+        chrome.storage.sync.set({ stats: {} }, () => refresh(parseInt(yearSelect.value)));
     }
 
     // Event Listeners

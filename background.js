@@ -92,10 +92,10 @@ function handlePomodoroAlarm() {
                 cyclesDone++;
 
                 const todayKey = getTodayKey();
-                chrome.storage.local.get(["stats"], (data) => {
+                chrome.storage.sync.get(["stats"], (data) => {
                     const stats = data.stats || {};
                     stats[todayKey] = (stats[todayKey] || 0) + 1;
-                    chrome.storage.local.set({ stats });
+                    chrome.storage.sync.set({ stats });
                 });
 
 
