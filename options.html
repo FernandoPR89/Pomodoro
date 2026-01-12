@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Configuración Pomodoro</title>
+    <link rel="stylesheet" href="options.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Configuración Pomodoro</h1>
+
+        <section class="config-section">
+            <h2>Temporizador</h2>
+            <div class="input-group">
+                <label for="work">Trabajo (minutos):</label>
+                <input id="work" type="number" min="1" />
+            </div>
+
+            <div class="input-group">
+                <label for="shortBreak">Descanso corto (minutos):</label>
+                <input id="shortBreak" type="number" min="1" />
+            </div>
+
+            <div class="input-group">
+                <label for="longBreak">Descanso largo (minutos):</label>
+                <input id="longBreak" type="number" min="1" />
+            </div>
+
+            <div class="input-group">
+                <label for="cycles">Ciclos antes del descanso largo:</label>
+                <input id="cycles" type="number" min="1" />
+            </div>
+        </section>
+
+        <section class="config-section">
+            <h2>Metas</h2>
+            <div class="input-group">
+                <label for="dailyGoal">Meta diaria (ciclos):</label>
+                <input id="dailyGoal" type="number" min="1" />
+            </div>
+
+            <div class="input-group">
+                <label for="weeklyGoal">Meta semanal (ciclos):</label>
+                <input id="weeklyGoal" type="number" min="1" />
+            </div>
+        </section>
+
+        <section class="config-section">
+            <h2>Preferencias</h2>
+            <div class="input-group checkbox-group">
+                <label for="soundEnabled">Activar sonido de alerta</label>
+                <input id="soundEnabled" type="checkbox" />
+            </div>
+        </section>
+
+        <div class="actions">
+            <button id="save" class="btn-primary">Guardar Cambios</button>
+            <p id="status" class="status-msg"></p>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Estadísticas Pomodoro</title>
+    <link rel="stylesheet" href="stats.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Estadísticas Pomodoro</h1>
+            <div class="toolbar">
+                <button id="exportCsvBtn" class="btn-outline">Exportar CSV</button>
+                <button id="clearStatsBtn" class="btn-danger">Borrar estadísticas</button>
+            </div>
+        </header>
+
+        <div class="summary-cards">
+            <div class="card">
+                <h3>Total</h3>
+                <p id="summaryTotal">0</p>
+            </div>
+            <div class="card">
+                <h3>Hoy</h3>
+                <p id="summaryToday">0</p>
+            </div>
+            <div class="card">
+                <h3>Últimos 7 días</h3>
+                <p id="summaryLast7">0</p>
+            </div>
+        </div>
+
+        <section class="chart-section">
+            <div class="header-row">
+                <h2>Actividad Anual</h2>
+                <div class="year-selector">
+                    <label for="yearSelect">Año:</label>
+                    <select id="yearSelect"></select>
+                </div>
+            </div>
+
+            <div class="heatmap-wrapper">
+                <div class="heatmap-legend">
+                    <span>Menos</span>
+                    <div class="heatmap-scale">
+                        <span class="heat-cell" style="background:#e5e7eb"></span>
+                        <span class="heat-cell" style="background:#d1fae5"></span>
+                        <span class="heat-cell" style="background:#a7f3d0"></span>
+                        <span class="heat-cell" style="background:#6ee7b7"></span>
+                        <span class="heat-cell" style="background:#34d399"></span>
+                        <span class="heat-cell" style="background:#10b981"></span>
+                    </div>
+                    <span>Más</span>
+                </div>
+
+                <div class="heatmap-container">
+                    <div class="heatmap-months" id="heatmap-months"></div>
+                    <div class="heatmap-grid">
+                        <div class="heatmap-days">
+                            <span>Dom</span>
+                            <span>Lun</span>
+                            <span>Mar</span>
+                            <span>Mié</span>
+                            <span>Jue</span>
+                            <span>Vie</span>
+                            <span>Sáb</span>
+                        </div>
+                        <div class="heatmap-cells" id="heatmap"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>Ciclos por Día</h2>
+            <canvas id="statsChart" width="700" height="300" aria-label="Gráfico de ciclos por día"></canvas>
+        </section>
+    </div>
+
+    <script src="stats.js"></script>
+</body>
+
+</html>

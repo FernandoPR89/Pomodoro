@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Pomodoro con estadísticas",
+    "version": "4.1.0",
+    "description": "Pomodoro configurable con notificaciones, sonido y estadísticas de progreso.",
+    "permissions": [
+        "alarms",
+        "storage",
+        "notifications"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Pomodoro"
+    },
+    "options_page": "options.html",
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "sounds/alert.mp3",
+                "icons/icon.png"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
